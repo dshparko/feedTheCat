@@ -22,14 +22,36 @@
         </activity>
 
         <activity
-            android:name=".AuthorizationActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".AboutActivity"
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false">
+                    </activity>
+        <activity
+            android:name=".AuthorizationActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".GameActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".RulesActivity"
+            android:exported="false">
+        </activity>
+
+
     </application>
 
 </manifest>

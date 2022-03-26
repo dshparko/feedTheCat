@@ -1,55 +1,56 @@
 package by.bsuir.dshparko.feedthecat;
-
-import static android.view.Window.FEATURE_NO_TITLE;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Color;
 import android.os.Handler;
+import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private int progress = 0;
-    private ProgressBar pbHorizontal;
-    private TextView tvProgressHorizontal;
-    private TextView tvProgressCircle;
-    private final Handler handler = new Handler();
-    private Timer timer = new Timer();
-    public void onCreate(Bundle savedInstanceState) {
+
+    private ProgressBar mProgressBar;
+    private TextView mLoadingText;
+
+    private int mProgressStatus = 0;
+
+    private Handler mHandler = new Handler();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-        pbHorizontal = (ProgressBar) findViewById(R.id.progress);
 
-        timer.schedule(new TimerTask() {
+        mProgressBar = findViewById(R.id.progressbar);
+        mLoadingText = findViewById(R.id.LoadingCompleteTextView);
+        mProgressBar.getProgressDrawable().setColorFilter(
+                Color.rgb(186,134,252), android.graphics.PorterDuff.Mode.SRC_IN);
+        new Thread(new Runnable() {
             @Override
             public void run() {
-                handler.post(new Runnable() {
+                while (mProgressStatus < 100){
+                    mProgressStatus++;
+                    android.os.SystemClock.sleep(50);
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mProgressBar.setProgress(mProgressStatus);
+                            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                }
+                mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        checkAnimationEnding();
+                        mLoadingText.setVisibility(View.VISIBLE);
                     }
                 });
             }
-        }, 0, 20);
+        }).start();
     }
-
-
-    private void checkAnimationEnding(){
-        if ( pbHorizontal.getProgress()==100 ){
-
-            timer.cancel();
-            timer = null;
-            System.out.println("Completed");
-
-        }
-    }
-
 }

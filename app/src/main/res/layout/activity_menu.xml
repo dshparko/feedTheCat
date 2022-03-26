@@ -15,7 +15,8 @@
         android:text="Authorization"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="authPressed"/>
 
     <Button
         android:id="@+id/results"
@@ -25,7 +26,8 @@
         android:text="Results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="resultsPressed"/>
 
     <Button
         android:id="@+id/about"
@@ -35,7 +37,8 @@
         android:text="About developer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="aboutPressed"/>
 
     <Button
         android:id="@+id/rules"
@@ -45,5 +48,6 @@
         android:text="Rules"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="rulesPressed"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

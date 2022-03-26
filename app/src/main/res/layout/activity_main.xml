@@ -9,58 +9,57 @@
 
     <ImageView
         android:id="@+id/cat"
-        android:layout_width="309dp"
-        android:layout_height="314dp"
+        android:layout_width="331dp"
+        android:layout_height="307dp"
         android:layout_marginTop="285dp"
-        android:layout_marginBottom="58dp"
-        app:layout_constraintBottom_toTopOf="@+id/progress"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toTopOf="@+id/progressbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
         app:layout_constraintVertical_chainStyle="spread"
         app:srcCompat="@drawable/cat" />
 
-    <TextView
-        android:id="@+id/loading"
-        android:layout_width="69dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="160dp"
-        android:text="Loading..."
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="357dp"
+        android:layout_height="114dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="812dp"
+        android:layout_marginBottom="232dp"
+        android:outlineAmbientShadowColor="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress" />
-
-    <ProgressBar
-        android:id="@+id/progress"
-        style="R.style.Widget_ProgressBar_Horizontal"
-        android:layout_width="102dp"
-        android:layout_height="112dp"
-        android:layout_marginBottom="33dp"
-        android:indeterminateTint="@color/purple_200"
-        app:layout_constraintBottom_toTopOf="@+id/loading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cat" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806" />
 
     <TextView
-        android:id="@+id/task"
-        android:layout_width="84dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="186dp"
-        android:text="Feed the cat"
+        android:id="@+id/LoadingCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="760dp"
+        android:text="Loading Complete"
+        android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group3"
+    <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="cat" />
+        android:text="Feed the cat"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="146dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
