@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">feedTheCat</string>
+    <string name="group">951005</string>
+    <string name="name">Darya Shparko</string>
+    <string name="auth">Authorization</string>
+    <string name="results">Results</string>
+    <string name="game">Game</string>
+    <string name="menu">Menu</string>
+    <string name="about">About developer</string>
+
+    <string name="task">lab 1</string>
+</resources>
