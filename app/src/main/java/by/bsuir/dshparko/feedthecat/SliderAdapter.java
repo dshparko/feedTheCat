@@ -29,7 +29,8 @@ public class SliderAdapter extends PagerAdapter {
     private LayoutInflater layoutInflater;
     private final Integer[] images = {
             R.drawable.achievements,
-            R.drawable.share};
+            R.drawable.share,
+    R.drawable.cat};
     private final String[] HEADERS = { "Feed the cat\nPress the 'Feed!' button",
             "Achievements\nWhen you reach 15 points you get achievements",
             "Share\nYou can share score with your friends!"};
@@ -54,9 +55,9 @@ public class SliderAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE
         );
-        @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.activity_main, null);
+        @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.firstlayout, null);
 
-        ImageView imageView = view.findViewById(R.id.cat);
+        ImageView imageView = view.findViewById(R.id.image_view);
         imageView.setImageResource(images[position]);
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view, 0);

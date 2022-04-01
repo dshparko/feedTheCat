@@ -15,6 +15,7 @@ public class MenuActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         getSupportActionBar().setTitle("Menu");
+
         setContentView(R.layout.activity_menu);
 
     }

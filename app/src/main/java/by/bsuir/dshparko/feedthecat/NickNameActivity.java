@@ -3,7 +3,12 @@ package by.bsuir.dshparko.feedthecat;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -12,23 +17,42 @@ import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.Objects;
 
-public class RulesActivity extends AppCompatActivity {
-    ViewPager viewPager;
-    DotsIndicator dots;
-    SliderAdapter sliderAdapter;
+public class NickNameActivity extends AppCompatActivity {
+
+
+    static String nick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rules);
+        setContentView(R.layout.activity_sign_in);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        viewPager = findViewById(R.id.view_pager);
-        dots = findViewById(R.id.dots);
 
-        sliderAdapter = new SliderAdapter(this);
-        viewPager.setAdapter(sliderAdapter);
-        dots.setViewPager(viewPager);
+        EditText editText = findViewById(R.id.name);
+
+        editText.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {}
+
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                System.out.println(s);
+                String ss=""+s;
+               nick =  ss;
+            }
+        });
+    }
+
+    public static String getNick(){
+        return nick;
+    }
+    public void auth(View view){
+        Intent intent1  =new Intent(this,GameActivity.class);
+        startActivity(intent1);
     }
 
     @SuppressLint("NonConstantResourceId")

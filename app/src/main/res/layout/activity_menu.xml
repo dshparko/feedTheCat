@@ -9,45 +9,60 @@
     <Button
         android:id="@+id/auth"
         android:layout_width="163dp"
-        android:layout_height="0dp"
+        android:layout_height="58dp"
 
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="240dp"
+        android:onClick="authPressed"
         android:text="Authorization"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="authPressed"/>
-
-    <Button
-        android:id="@+id/results"
-        android:layout_width="163dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="258dp"
-        android:text="Results"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="resultsPressed"/>
-
-    <Button
-        android:id="@+id/about"
-        android:layout_width="163dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="338dp"
-        android:text="About developer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="aboutPressed"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/rules"
         android:layout_width="163dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="409dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="472dp"
+        android:onClick="rulesPressed"
         android:text="Rules"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="rulesPressed"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/results"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="316dp"
+        android:onClick="resultsPressed"
+        android:text="Results"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="164dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="544dp"
+        android:text="Exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="164dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="388dp"
+        android:onClick="aboutPressed"
+        android:text="About developer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

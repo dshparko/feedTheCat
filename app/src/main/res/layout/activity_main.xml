@@ -28,7 +28,7 @@
         android:layout_height="114dp"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:layout_marginStart="69dp"
+        android:layout_marginStart="29dp"
         android:layout_marginTop="812dp"
         android:layout_marginBottom="232dp"
         android:outlineAmbientShadowColor="@color/purple_200"
@@ -55,11 +55,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/labName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="151dp"
         android:text="Feed the cat"
-        tools:layout_editor_absoluteX="201dp"
-        tools:layout_editor_absoluteY="146dp" />
+        android:textSize="@dimen/size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

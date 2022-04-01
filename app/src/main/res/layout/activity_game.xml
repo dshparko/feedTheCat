@@ -9,38 +9,48 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="431dp"
+        android:layout_marginTop="580dp"
+        android:onClick="feed_button_click"
         android:text="Feed"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="100dp"
         android:text="Satiety: "
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="265dp" />
+        android:textSize="@dimen/size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="384dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="77dp"
         android:text="0"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="323dp" />
+        android:textSize="@dimen/size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/share"
         android:layout_width="63dp"
         android:layout_height="61dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/oval_button"
+        android:onClick="shareClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,13 +58,51 @@
         app:srcCompat="?attr/actionModeShareDrawable" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/cat"
         android:layout_width="223dp"
         android:layout_height="230dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="296dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cat0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="24dp"
+        android:text="Anonim"
+        android:textSize="@dimen/size1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Name: "
+        android:textSize="@dimen/size1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/save"
+        android:layout_width="43dp"
+        android:layout_height="44dp"
+
+        android:onClick="saveScore"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="284dp"
+        android:background="@drawable/rechtangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/stat_sys_download_done" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
