@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginTop="228dp"
-
+        android:onClick="signOut"
         android:text="Sign out"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,10 +31,10 @@
         android:id="@+id/nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="312dp"
-        android:text="Input name"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="316dp"
         android:onClick="inputName"
+        android:text="Input name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

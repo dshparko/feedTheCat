@@ -36,8 +36,6 @@ public class SignOutActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-        Intent intent1 = new Intent(this,SignInActivity.class);
-        startActivity(intent1);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -54,37 +52,14 @@ public class SignOutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_out);
-        setTitle("Sign out");
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        name = findViewById(R.id.TextViewName);
-        email = findViewById(R.id.TextViewEMail);
-        id = findViewById(R.id.TextViewId);
-        signOut = findViewById(R.id.button_sign_out);
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public void onClick(View view) {
-                if (view.getId() == R.id.button_sign_out) {
-                    signOut();
-                }
-            }
-        });
+        signOut();
 
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if (acct != null) {
-            String personName = acct.getDisplayName();
-            String personEmail = acct.getEmail();
-            String personId = acct.getId();
 
-            name.setText(personName);
-            email.setText(personEmail);
-            id.setText(personId);
-        }
     }
 }

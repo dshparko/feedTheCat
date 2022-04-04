@@ -1,20 +1,28 @@
 package by.bsuir.dshparko.feedthecat;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -26,12 +34,9 @@ import java.util.Objects;
 
 public class GameActivity extends AppCompatActivity {
 
-    Animation animation;
     private TextView satiety_textView;
     private int clicks = 0;
     private String personName;
-    final String FILENAME = "achievements";
-    private Animation animation_cat;
     private ImageView imageView;
     AnimationDrawable frameAnimation;
 
@@ -50,13 +55,14 @@ public class GameActivity extends AppCompatActivity {
         frameAnimation = (AnimationDrawable) imageView.getBackground();
         name = findViewById(R.id.name);
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        String s = NickNameActivity.getNick();
-        if(s!=""){
-            personName =s;
-            name.setText(s);
-        }
-        else if (acct != null) {
+        String s = NickNameActivity.getNick();if (acct != null) {
+            System.out.println("2"+personName);
             personName = acct.getDisplayName();
+            name.setText(personName);
+        }
+        else{
+            System.out.println("1"+personName);
+            personName =s;
             name.setText(personName);
         }
     }
@@ -82,7 +88,10 @@ public class GameActivity extends AppCompatActivity {
 
         shareIntent.putExtra(Intent.EXTRA_TEXT,shareRes);
         startActivity(Intent.createChooser(shareIntent,"SHARE"));
+
+        showToast(view,"Результат отправлен!");
     }
+
     public void writeFile(String filename,String text) {
         try {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
@@ -100,6 +109,16 @@ public class GameActivity extends AppCompatActivity {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String format = formatter.format(date);
         writeFile("results",personName+"|"+format+"|" + clicks+"\n");
+        showToast(view,"Результат сохранен!");
+    }
+
+    public void showToast(View view, String text) {
+        //создаём и отображаем текстовое уведомление
+        Toast toast = Toast.makeText(getApplicationContext(),
+                text,
+                Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     public void feed_button_click(View view) {

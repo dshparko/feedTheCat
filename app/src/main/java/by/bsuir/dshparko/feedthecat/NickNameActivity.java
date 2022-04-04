@@ -20,7 +20,7 @@ import java.util.Objects;
 public class NickNameActivity extends AppCompatActivity {
 
 
-    static String nick;
+    static String nick="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

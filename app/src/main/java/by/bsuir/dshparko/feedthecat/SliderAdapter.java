@@ -27,13 +27,17 @@ public class SliderAdapter extends PagerAdapter {
 
     private final Context context;
     private LayoutInflater layoutInflater;
-    private final Integer[] images = {
-            R.drawable.achievements,
+    private final Integer[] images = {R.drawable.auth,
+            R.drawable.feed,
+            R.drawable.cat3,
             R.drawable.share,
-    R.drawable.cat};
-    private final String[] HEADERS = { "Feed the cat\nPress the 'Feed!' button",
-            "Achievements\nWhen you reach 15 points you get achievements",
-            "Share\nYou can share score with your friends!"};
+            R.drawable.save};
+    private final String[] HEADERS = { "You can authorization with google account or input nickname",
+            "Press the 'Feed' button",
+            "Every 15 points you will watch animation",
+                        "You can share score with your friends!",
+            "You can save result",
+    };
 
     SliderAdapter(Context context){
         this.context = context;
@@ -49,6 +53,7 @@ public class SliderAdapter extends PagerAdapter {
         return view == object;
     }
 
+    private TextView text;
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
@@ -57,8 +62,10 @@ public class SliderAdapter extends PagerAdapter {
         );
         @SuppressLint("InflateParams") View view = layoutInflater.inflate(R.layout.firstlayout, null);
 
+        text = view.findViewById(R.id.textView);
         ImageView imageView = view.findViewById(R.id.image_view);
         imageView.setImageResource(images[position]);
+        text.setText(HEADERS[position]);
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view, 0);
         return view;

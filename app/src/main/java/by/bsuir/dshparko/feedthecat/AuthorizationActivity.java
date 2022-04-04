@@ -31,6 +31,11 @@ public class AuthorizationActivity extends AppCompatActivity {
            startActivity(intent);
     }
 
+    public void signOut(View view){
+        Intent intent = new Intent(getApplicationContext(), SignOutActivity.class);
+        startActivity(intent);
+    }
+
 
     public void inputName(View view){
         Intent intent = new Intent(getApplicationContext(), NickNameActivity.class);

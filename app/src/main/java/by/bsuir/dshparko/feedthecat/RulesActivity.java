@@ -20,7 +20,7 @@ public class RulesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
-
+        getSupportActionBar().setTitle("Rules");
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         viewPager = findViewById(R.id.view_pager);
