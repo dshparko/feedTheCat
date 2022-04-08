@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/rules"
-        android:layout_width="163dp"
-        android:layout_height="54dp"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
         android:layout_marginTop="472dp"
         android:onClick="rulesPressed"
         android:text="Rules"
@@ -45,8 +45,8 @@
 
     <Button
         android:id="@+id/exit"
-        android:layout_width="164dp"
-        android:layout_height="52dp"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
         android:layout_marginTop="544dp"
         android:text="Exit"
         android:onClick="signOut"
@@ -57,8 +57,8 @@
 
     <Button
         android:id="@+id/about"
-        android:layout_width="164dp"
-        android:layout_height="54dp"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
         android:layout_marginTop="388dp"
         android:onClick="aboutPressed"
         android:text="About developer"
