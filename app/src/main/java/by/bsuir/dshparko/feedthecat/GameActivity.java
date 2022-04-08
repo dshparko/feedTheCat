@@ -55,16 +55,11 @@ public class GameActivity extends AppCompatActivity {
         frameAnimation = (AnimationDrawable) imageView.getBackground();
         name = findViewById(R.id.name);
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        String s = NickNameActivity.getNick();if (acct != null) {
-            System.out.println("2"+personName);
+        if (acct != null) {
             personName = acct.getDisplayName();
             name.setText(personName);
         }
-        else{
-            System.out.println("1"+personName);
-            personName =s;
-            name.setText(personName);
-        }
+
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -89,7 +84,6 @@ public class GameActivity extends AppCompatActivity {
         shareIntent.putExtra(Intent.EXTRA_TEXT,shareRes);
         startActivity(Intent.createChooser(shareIntent,"SHARE"));
 
-        showToast(view,"Результат отправлен!");
     }
 
     public void writeFile(String filename,String text) {

@@ -67,7 +67,7 @@ public class MenuActivity  extends AppCompatActivity {
     }
 
     public void authPressed(View view){
-        Intent intent = new Intent(getApplicationContext(), AuthorizationActivity.class);
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
         startActivity(intent);
     }
 

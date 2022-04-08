@@ -36,6 +36,9 @@ public class SignOutActivity extends AppCompatActivity {
                         finish();
                     }
                 });
+
+        Intent intent1 = new Intent(this,SignInActivity.class);
+        startActivity(intent1);
     }
 
     @SuppressLint("NonConstantResourceId")

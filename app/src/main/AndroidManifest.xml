@@ -52,10 +52,6 @@
             android:exported="false">
         </activity>
 
-        <activity
-            android:name=".ExitActivity"
-            android:exported="false">
-        </activity>
 
         <activity
             android:name=".ResultActivity"
@@ -64,6 +60,11 @@
 
         <activity
             android:name=".RulesActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".UserActivity"
             android:exported="false">
         </activity>
 
