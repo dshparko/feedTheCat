@@ -61,10 +61,6 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
-    public void signIn(View  view){
-        Intent intent1  =new Intent(this,NickNameActivity.class);
-        startActivity(intent1);
-    }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
