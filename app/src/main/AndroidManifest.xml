@@ -35,15 +35,7 @@
             android:name=".SignInActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".NickNameActivity"
-            android:exported="false">
-        </activity>
-        <activity
             android:name=".SignOutActivity"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".AuthorizationActivity"
             android:exported="false">
         </activity>
 

@@ -23,8 +23,6 @@ import com.google.android.gms.tasks.Task;
 
 public class SignOutActivity extends AppCompatActivity {
 
-    Button signOut;
-    TextView name, email, id;
     GoogleSignInClient mGoogleSignInClient;
 
     private void signOut() {
