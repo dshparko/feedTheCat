@@ -48,6 +48,13 @@ public class UserActivity extends AppCompatActivity {
         }
     }
 
+
+    public void startGame(View view){
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
+
+
     public void signOut(View view){
         Intent intent = new Intent(getApplicationContext(), SignOutActivity.class);
         startActivity(intent);

@@ -34,23 +34,18 @@ public class MenuActivity  extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void exitPressed(View view){
-
-
-        Intent intent = new Intent(getApplicationContext(), SignOutActivity.class);
-        startActivity(intent);
-        finishAffinity();
-    }
 
 
 
-    public void signOut(View view) {
+
+    public void exitPressed(View view) {
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
         GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        if(mGoogleSignInClient!=null) {
+        if (acct != null) {
 
 
             mGoogleSignInClient.signOut()
