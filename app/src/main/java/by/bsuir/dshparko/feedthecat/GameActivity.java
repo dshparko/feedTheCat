@@ -115,7 +115,7 @@ public class GameActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public void feed_button_click(View view) {
+    public void feedButtonClick(View view) {
         clicks++;
         satiety_textView.setText(String.valueOf(clicks));
         if (clicks % 15 == 0) {

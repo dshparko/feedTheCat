@@ -16,8 +16,9 @@ import java.util.Objects;
 
 public class UserActivity extends AppCompatActivity {
     String personName;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
@@ -29,7 +30,7 @@ public class UserActivity extends AppCompatActivity {
         if (acct != null) {
             personName = acct.getDisplayName();
             name.setText(personName);
-        }else{
+        } else {
 
             Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
             startActivity(intent);
@@ -39,23 +40,24 @@ public class UserActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent1  =new Intent(this,MenuActivity.class);
+                Intent intent1 = new Intent(this, MenuActivity.class);
                 startActivity(intent1);
                 return true;
-            default:return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
 
-    public void startGame(View view){
+    public void startGame(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
 
 
-    public void signOut(View view){
+    public void signOut(View view) {
         Intent intent = new Intent(getApplicationContext(), SignOutActivity.class);
         startActivity(intent);
     }
